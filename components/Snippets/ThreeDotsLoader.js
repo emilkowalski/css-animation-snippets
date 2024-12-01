@@ -42,6 +42,18 @@ const Wrapper = styled('div', {
   }
 });
 
+const tailwindStyling = ` 
+.exampleClass span {
+  @apply w-2 h-2 bg-[white] animate-[flashing_1.4s_infinite_linear] inline-block mx-1 my-0 rounded-[50%];
+}
+.exampleClass span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.exampleClass span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+`
+
 const cssStyling = `
 .exampleClass span {
   width: 8px;
@@ -108,4 +120,4 @@ const scssStyling = `
   }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling,  tailwindStyling, Component };

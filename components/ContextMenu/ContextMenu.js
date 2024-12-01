@@ -4,13 +4,14 @@ import * as RadixContextMenu from '@radix-ui/react-context-menu';
 
 const timeout = 3000;
 
-const ContextMenu = ({ children, cssStyling, scssStyling }) => {
+const ContextMenu = ({ children, tailwindStyling, cssStyling, scssStyling }) => {
   const copyToClipboard = async (styling) => {
     try {
       await navigator.clipboard.writeText(styling);
 
       createToast('Copied styles to clipboard', {
-        timeout
+        timeout,
+        type: 'default'
       });
     } catch {
       createToast('Failed to copy', {
@@ -23,7 +24,9 @@ const ContextMenu = ({ children, cssStyling, scssStyling }) => {
   return (
     <RadixContextMenu.Root>
       <RadixContextMenu.Trigger>{children}</RadixContextMenu.Trigger>
+
       <Content>
+        <Item onSelect={() => copyToClipboard(tailwindStyling)}>TailwindCSS</Item>
         <Item onSelect={() => copyToClipboard(cssStyling)}>CSS</Item>
         <Item onSelect={() => copyToClipboard(scssStyling)}>SCSS</Item>
       </Content>
@@ -57,7 +60,7 @@ const Content = styled(RadixContextMenu.Content, {
 
   '&[data-state="closed"]': {
     animation: `${scaleOut} 0.1s ease`
-  },
+  }
 });
 
 const Item = styled(RadixContextMenu.Item, {
@@ -66,7 +69,7 @@ const Item = styled(RadixContextMenu.Item, {
   cursor: 'default',
   height: 28,
   padding: '4px 8px',
-  display: "flex",
+  display: 'flex',
   alignItems: 'center',
   color: '$gray',
 

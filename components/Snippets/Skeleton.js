@@ -19,6 +19,20 @@ const Wrapper = styled('div', {
   animation: `${loading} 8s ease-in-out infinite`
 });
 
+const tailwindStyling = `
+.exampleClass {
+  @apply w-[120px] h-11 bg-[linear-gradient(270deg,hsl(109,0%,12%),hsl(109,0%,20%),hsl(109,0%,20%),hsl(109,0%,12%))] bg-[400%_100%] animate-[loading_8s_ease-in-out_infinite] rounded-md;
+}
+@keyframes loading {
+  from {
+    @apply bg-[200%_0];
+  }
+  to {
+    @apply bg-[-200%_0];
+  }
+}
+`
+
 const cssStyling = `
 .exampleClass {
 	width: 120px;
@@ -59,4 +73,4 @@ const scssStyling = `
 }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling,  tailwindStyling, Component };

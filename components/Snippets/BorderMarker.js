@@ -35,6 +35,15 @@ const Wrapper = styled('a', {
   }
 });
 
+const tailwindStyling = `
+.exampleClass {
+  @apply relative before:content-[""] before:absolute before:left-[-0.1px] before:right-[-0.1px] before:h-full before:transition-transform before:duration-[0.6s] before:ease-[cubic-bezier(0.53,0.21,0,1)] before:origin-bottom before:bg-[hsl(244,63%,69%)] before:opacity-60 before:scale-y-[0.3] before:bottom-0 hover:before:scale-y-100;
+}
+.exampleClass span {
+  @apply relative;
+}
+`
+
 const cssStyling = `
 .exampleClass {
 	position: relative;
@@ -91,4 +100,4 @@ const scssStyling = `
   }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling,  tailwindStyling, Component };

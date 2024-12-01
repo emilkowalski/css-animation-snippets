@@ -46,6 +46,18 @@ const Wrapper = styled('a', {
   }
 });
 
+const tailwindStyling = `
+.exampleClass {
+  @apply bg-[white] relative overflow-hidden px-6 py-3 rounded-md before:content-[''] before:absolute before:-translate-x-full before:-translate-y-2/4 before:w-full before:h-full before:bg-[hsl(244,63%,69%)] before:transition-transform before:duration-[0.6s] before:ease-[cubic-bezier(0.53,0.21,0,1)] before:rounded-md before:left-0 before:top-2/4 hover:before:translate-x-0 hover:before:-translate-y-2/4;
+}
+.exampleClass span {
+  @apply text-[black] relative z-[1] transition-[color] duration-[0.6s] ease-[cubic-bezier(0.53,0.21,0,1)];
+}
+.exampleClass:hover span {
+  @apply text-[white];
+}
+`
+
 const cssStyling = `
 .exampleClass {
     padding: 12px 24px;
@@ -124,4 +136,4 @@ const scssStyling = `
 }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling,  tailwindStyling, Component };

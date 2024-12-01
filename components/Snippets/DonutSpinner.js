@@ -23,6 +23,24 @@ const Wrapper = styled('a', {
   animation: `${donutSpin} 1.2s linear infinite`
 });
 
+const tailwindStyling = `
+.exampleBtn {
+  @apply inline-block w-[30px] h-[30px] animate-donut-spin rounded-[50%] border-l-[white] border-4 border-solid border-[rgba(255,255,255,0.1)];
+}
+
+// in tailwind.config.ts file 
+extend: {
+      keyframes: {
+        'donut-spin': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
+      animation: {
+        'donut-spin': 'donut-spin 1s linear infinite',
+      },
+    },
+`
 const cssStyling = `
 @keyframes donut-spin {
 	0% {
@@ -65,4 +83,4 @@ const scssStyling = `
 }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling, tailwindStyling, Component };

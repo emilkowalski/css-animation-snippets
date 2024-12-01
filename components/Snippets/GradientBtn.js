@@ -69,6 +69,31 @@ const Button = styled('div', {
   transition: 'transform 250ms cubic-bezier(.2,.8,.4,1)'
 });
 
+const tailwindStyling = ` 
+.exampleClass {
+  @apply relative p-px;
+  borderradius: 8px;
+}
+.exampleClass:hover div {
+  @apply opacity-100;
+  transitionduration: 0.25s;
+}
+.exmapleClass div {
+  @apply blur-[1px] absolute w-full h-full transition-opacity duration-[1.5s] ease-[ease] animate-[10s_ease-in-out_0s_infinite_normal_both_running_pulse] opacity-75 left-0 top-0;
+  borderradius: 8px;
+  background: linear-gradient(
+    91.83deg,
+    rgb(208, 60, 74) 2.26%,
+    rgb(172, 74, 218) 95.81%
+  );
+}
+.exampleClass span {
+  @apply relative text-[black] cursor-pointer transition-transform duration-[250ms] ease-[cubic-bezier(.2,0.8,0.4,1)] px-6 py-3;
+  backgroundcolor: white;
+  borderradius: 8px;
+}
+`
+
 const cssStyling = `
 .exampleClass {
 	position: relative;
@@ -143,4 +168,4 @@ const scssStyling = `
 }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling,  tailwindStyling, Component };

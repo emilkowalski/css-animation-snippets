@@ -22,6 +22,16 @@ const Wrapper = styled('a', {
   }
 });
 
+const tailwindStyling = `
+.exampleClass {
+  @apply text-[white] hover:animate-[swing_1s_ease];
+}
+
+.exampleClass:hover {
+  animation-iteration-count: 1;
+}
+`
+
 const cssStyling = `
 .exampleClass {
 	color: white;
@@ -44,4 +54,4 @@ const scssStyling = `
  }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling,  tailwindStyling, Component };

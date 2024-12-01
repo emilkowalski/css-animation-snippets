@@ -18,6 +18,17 @@ const Wrapper = styled('a', {
   animation: `${pulse} 1.5s infinite cubic-bezier(0.66, 0, 0, 1)`
 });
 
+const tailwindStyling = `
+.exampleClass {
+  @apply bg-[black] text-[white] shadow-[0_0_0_0_rgba(255,255,255,0.1)] animate-[pulse_1.75s_infinite_cubic-bezier(0.66,0,0,1)] px-6 py-3 rounded-[7px];
+}
+@keyframes pulse {
+  to {
+    @apply shadow-[0_0_0_20px_rgba(255,255,255,0)];
+  }
+}
+`
+
 const cssStyling = `
 .exampleClass {
     padding: 12px 24px;
@@ -52,4 +63,4 @@ const scssStyling = `
 }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling,  tailwindStyling, Component };
