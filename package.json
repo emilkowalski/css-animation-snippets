@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider next dev",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider next build",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "vercel-toast": "^1.5.3"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "^7.30.0",
     "eslint-config-next": "^11.0.1",
     "prettier": "^2.3.2"
