@@ -28,6 +28,12 @@ const Wrapper = styled('a', {
   }
 });
 
+const tailwindStyling = `
+.exampleClass {
+  @apply inline-block relative text-[white] after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[white] after:origin-bottom-right after:transition-transform after:duration-[0.4s] after:ease-[cubic-bezier(0.86,0,0.07,1)] after:scale-x-0 after:left-0 after:bottom-0 hover:after:origin-bottom-left hover:after:scale-x-100;
+}
+`
+
 const cssStyling = `
 .exampleClass {
     display: inline-block;
@@ -80,4 +86,4 @@ const scssStyling = `
   }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling,  tailwindStyling, Component };

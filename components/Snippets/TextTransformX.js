@@ -23,6 +23,19 @@ const Wrapper = styled('a', {
   }
 });
 
+const tailwindStyling = `
+.exampleClass {
+  @apply text-[white];
+}
+span {
+  @apply inline-block;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.exampleClass:hover span {
+  @apply translate-x-1 text-[hsl(243,80%,62%)];
+}
+`
+
 const cssStyling = `
 .exampleClass {
 	color: white;
@@ -55,4 +68,4 @@ const scssStyling = `
 }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling,  tailwindStyling, Component };

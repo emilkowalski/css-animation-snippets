@@ -19,6 +19,21 @@ const Wrapper = styled('a', {
   }
 });
 
+const tailwindStyling = `
+.exampleClass {
+  @apply overflow-hidden bg-[white] text-[black] relative inline-block cursor-pointer px-6 py-3 rounded-[7px] before:content-[""] before:block before:absolute before:w-full before:h-full before:origin-[100%_100%] before:transition-transform before:duration-[0.6s] before:ease-[cubic-bezier(0.53,0.21,0,1)] before:scale-x-0 before:left-0 before:top-0 hover:before:origin-[0_0] hover:before:scale-x-100;
+}
+.exampleClass span {
+  @apply relative transition-[color] duration-[0.6s] ease-[cubic-bezier(0.53,0.21,0,1)];
+}
+.exampleClass:before {
+  background: hsl(244, 63%, 69%);
+}
+.exampleClass:hover span {
+  @apply text-[white];
+}
+`
+
 const cssStyling = `
 .exampleClass {
 	overflow: hidden;
@@ -34,7 +49,7 @@ const cssStyling = `
 .exampleClass span {
 	position: relative;
 	transition: color 0.6s cubic-bezier(0.53, 0.21, 0, 1);
-},
+}
 
 .exampleClass:before {
 	content: "";
@@ -48,16 +63,16 @@ const cssStyling = `
 	transform: scaleX(0);
 	transform-origin: 100% 100%;
 	transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
-},
+}
 
 .exampleClass:hover::before {
 	transform-origin: 0 0;
 	transform: scaleX(1);
-},
+}
 
 .exampleClass:hover span {
 	color: white;
-},
+}
 `;
 
 const scssStyling = `
@@ -103,4 +118,4 @@ const scssStyling = `
 }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling,  tailwindStyling, Component };

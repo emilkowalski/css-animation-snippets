@@ -48,6 +48,26 @@ const Wrapper = styled('a', {
   }
 });
 
+const tailwindStyling = `
+.exampleBtn {
+  @apply bg-[hsl(222,100%,95%)] text-[hsl(243,80%,62%)] relative overflow-hidden z-[1] px-6 py-3 rounded-md before:content-[''] before:absolute before:w-[140px] before:h-[140px] before:bg-[hsl(243,80%,62%)] before:opacity-0 before:rounded-[50%] before:left-2/4 before:top-2/4 hover:before:opacity-100 hover:before:duration-[0.85s];
+}
+.exampleBtn span {
+  @apply z-[1] relative;
+}
+.exampleBtn::before {
+  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.exampleBtn:hover span {
+  @apply text-[hsl(222,100%,95%)];
+}
+.exampleBtn:hover::before {
+  transform: translate3d(-50%, -50%, 0) scale3d(1.2, 1.2, 1.2);
+}
+`
+
 const cssStyling = `
 .exampleBtn {
     padding: 12px 24px;
@@ -132,4 +152,4 @@ const scssStyling = `
 }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling,  tailwindStyling, Component };

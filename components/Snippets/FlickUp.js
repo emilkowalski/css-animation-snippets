@@ -45,6 +45,28 @@ const Wrapper = styled('a', {
   }
 });
 
+const tailwindStyling = `
+.exampleBtn {
+  @apply text-['white'] cursor-['pointer'];
+  overflow: "hidden";
+  display: "block";
+  position: "relative";
+}
+.main-text {
+  @apply block transition-transform duration-500;
+}
+.hover-text {
+  @apply transition-transform duration-[250ms] translate-y-[0%] absolute w-full h-full left-0 top-0;
+}
+.exampleBtn:hover .main-text {
+  @apply transition-transform duration-[250ms] -translate-y-full;
+}
+.exampleBtn:hover .hover-text {
+  @apply transition-transform duration-[250ms] translate-y-[0%];
+}
+`
+
+
 const cssStyling = `
 .exampleBtn {
 	color: 'white';
@@ -118,4 +140,4 @@ const scssStyling = `
 }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling,  tailwindStyling, Component };

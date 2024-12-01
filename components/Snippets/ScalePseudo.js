@@ -27,6 +27,12 @@ const Wrapper = styled('a', {
   }
 });
 
+const tailwindStyling = `
+.exampleClass {
+  @apply text-[black] transition-transform duration-[0.15s] cursor-pointer relative z-[1] px-6 py-3 after:content-[''] after:bg-[white] after:transition-transform after:duration-[0.15s] after:absolute after:z-[-1] after:rounded-[7px] after:inset-0 hover:after:scale-110;
+}
+`
+
 const cssStyling = `
 .exampleClass {
 	padding: 12px 24px;
@@ -77,4 +83,4 @@ const scssStyling = `
 }
 `;
 
-export { cssStyling, scssStyling, Component };
+export { cssStyling, scssStyling,  tailwindStyling, Component };
